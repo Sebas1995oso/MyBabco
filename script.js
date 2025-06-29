@@ -141,34 +141,9 @@ function confirmDelete() {
     alert("Send function not implemented yet.");
   }
 
-  // --- Auto generación de username ---
-  document.addEventListener('DOMContentLoaded', function () {
-    const autoCheckbox = document.getElementById('autoGenerate');
-    const usernameInput = document.getElementById('regUsername');
-    const nameInput = document.getElementById('regName');
-    const propertyInput = document.getElementById('regProperty');
-    const phoneInput = document.getElementById('regPhone');
+  
 
-    function generateUsername() {
-      if (autoCheckbox.checked) {
-        const name = nameInput.value.trim().toLowerCase().replace(/\s+/g, '').slice(-4);
-        const property = propertyInput.value.trim().toLowerCase().replace(/\s+/g, '').slice(-4);
-        const phone = phoneInput.value.trim().replace(/\D/g, '').slice(-4);
-        usernameInput.value = (name && property && phone) ? `${name}${property}${phone}` : '';
-      }
-    }
-
-    autoCheckbox.addEventListener('change', function () {
-      usernameInput.readOnly = this.checked;
-      generateUsername();
-    });
-
-    nameInput.addEventListener('input', generateUsername);
-    propertyInput.addEventListener('input', generateUsername);
-    phoneInput.addEventListener('input', generateUsername);
-
-    updateCounters(); // Inicializar contadores al cargar
-  });
+   
 
   document.getElementById("loginBtn").addEventListener("click", function () {
     const btn = this;
@@ -187,6 +162,7 @@ function confirmDelete() {
       window.location.href = './MyBabco.html';
     }, 1500);
   });
+  
 
 
  
@@ -198,9 +174,7 @@ function confirmDelete() {
       propertyManager: document.getElementById('regProperty').value,
       email: document.getElementById('regEmail').value,
       phone: document.getElementById('regPhone').value,
-      username: document.getElementById('regUsername').value,
-      password: document.getElementById('regPassword').value,
-      confirmPassword: document.getElementById('regConfirmPassword').value
+      
     };
 
     const response = await fetch('/register', {
@@ -221,3 +195,6 @@ function confirmDelete() {
       alert('Error: ' + result.message);
     }
   });
+
+
+   

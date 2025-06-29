@@ -37,19 +37,15 @@ app.post('/register', (req, res) => {
     propertyManager,
     email,
     phone,
-    username,
-    password,
-    confirmPassword
+   
   } = req.body;
 
-  if (password !== confirmPassword) {
-    return res.status(400).json({ message: 'Las contraseñas no coinciden' });
-  }
+  
 
-  const sql = `INSERT INTO usuarios (full_name, property_manager, email, phone, username, password)
-               VALUES (?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO usuarios (full_name, property_manager, email, phone)
+               VALUES (?, ?, ?, ?)`;
 
-  const values = [name, propertyManager, email, phone, username, password];
+  const values = [name, propertyManager, email, phone];
 
   db.query(sql, values, (err, result) => {
     if (err) {
@@ -64,3 +60,27 @@ app.post('/register', (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
 });
+
+
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    return res.status(400).json({ message: 'Username and password required' });
+  }
+
+  const sql = 'SELECT * FROM usuarios WHERE username = ? AND password = ?';
+  db.query(sql, [username, password], (err, results) => {
+    if (err) {
+      console.error('❌ Error en login:', err);
+      return res.status(500).json({ message: 'Error interno en el servidor' });
+    }
+
+    if (results.length > 0) {
+      return res.status(200).json({ message: 'Login successful' });
+    } else {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+  });
+});
+
