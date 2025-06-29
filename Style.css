@@ -1,0 +1,431 @@
+.custom-btn-green {
+      background-color: #00b297;
+      color: white;
+      border: none;
+    }
+    .custom-btn-green:hover {
+      background-color: #009e84;
+    }
+    .custom-btn-red {
+      background-color: #e63946;
+      color: white;
+      border: none;
+    }
+    .custom-btn-red:hover {
+      background-color: #d62839;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 150px;
+      height: 150px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .flip-card-front {
+      background-color: #fff;
+    }
+
+    .flip-card-back {
+      background-color: #5FBEC6;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 120px;
+      height: 120px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .flip-card-front {
+      background-color: white;
+    }
+
+    .flip-card-back {
+      background-color: #5fbec6;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .decorative-icon {
+      position: absolute;
+      opacity: 0.08;
+      z-index: 0;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    footer {
+      background-color: #5fbec6;
+      color: white;
+    }
+
+    footer a img {
+      filter: brightness(0) invert(1);
+      margin: 0 10px;
+    }
+
+    .custom-btn-green {
+      background-color: #5fbec6;
+      color: white;
+    }
+
+    .custom-btn-red {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+html,
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body > .container {
+    flex: 1;
+  }
+
+  footer {
+    background-color: #5FBEC6;
+    padding: 1rem 0;
+    color: white;
+  }
+
+  footer a img {
+    filter: brightness(0) invert(1);
+    margin: 0 0.5rem;
+    transition: filter 0.3s;
+  }
+
+  footer a:hover img {
+    filter: brightness(0.8) invert(0.8);
+  }
+
+  .btn.custom-btn-red {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Fondo del modal */
+    .modal_search {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    /* Contenido del modal */
+    .modal-content_search {
+      background-color: #d9534f;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      color: white;
+      text-align: center;
+    }
+
+    .modal-content_search label,
+    .modal-content_search input,
+    .modal-content_search button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .modal-content_search input {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .modal-content_search button {
+      margin-top: 15px;
+      padding: 8px;
+      background-color: white;
+      color: #d9534f;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Botón para cerrar */
+    .close {
+      float: right;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+
+
+ /* Flip card base styles */
+.flip-card {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.flip-card-front {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.flip-card-back {
+  background-color: #5FBEC6;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Card container */
+.service-card {
+  width: 120px;
+}
+
+/* Service label below each card */
+.service-label {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #5FBEC6;
+  font-size: 14px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .service-card {
+    width: 100px;
+  }
+}   
+
+.custom-box {
+  border: 3px solid #5FBEC6; /* color del footer */
+  border-radius: 15px;       /* puntas redondeadas */
+  padding: 30px;
+  background-color: white;
+  width: 100%;
+  min-height: 230px;          /* ajusta la altura mínima si lo necesitas */
+  box-sizing: border-box;
+}
+
+.glow-card {
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 15px;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .glow-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .glow-card.active {
+      box-shadow: 0 0 25px 8px #5FBEC6;
+      transform: scale(1.05);
+    }
+
+    .service-label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+
+    .service-card {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.glow-card {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-card.glow {
+  box-shadow: 0 0 15px 5px #5FBEC6;
+}
+
+.service-label {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .glow-card {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-label {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Glow effect for selected card */
+.glow-card {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.glow-card.active-glow {
+  box-shadow: 0 0 15px #5FBEC6;
+  transform: scale(1.05);
+}
+
+/* Modal styling (opcional) */
+.modal-content {
+  border: 2px solid #5FBEC6;
+}
+
+.custom-box {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
